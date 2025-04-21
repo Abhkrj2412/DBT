@@ -7,4 +7,4 @@ source-paths:
 
 models:
   my_dbt_project:
-    +materialized: ephemeral
+    +materialized: view
