@@ -1,8 +1,15 @@
 name: my_dbt_project
 version: '1.0'
-profile: my_dbt_project  # This should match the profile name in profiles.yml
+profile: my_dbt_project  
 
 source-paths:
-  - models
+  - models  
 
+target-path: target  
 
+clean-targets:
+  - target  
+
+models:
+  my_dbt_project:
+    +materialized: table  

@@ -1,8 +1,7 @@
--- models/debug_sales_data.sql
-{{ config(materialized='table') }}
+{{ config(materialized='table') }}  
 
 WITH debug_data AS (
-    {{ debug_query() }}
+    {{ debug_query() }}  
 )
 
 SELECT * FROM debug_data;
