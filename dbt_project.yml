@@ -1,48 +1,11 @@
-name: my_dbt_project  # The name of your project
-version: '1.0'  # Version of the DBT project
-profile: my_profile  # The DBT profile (usually defined in your profiles.yml file)
+name: my_dbt_project
+version: '1.0'
+profile: my_dbt_project  # This should match the profile name in profiles.yml
 
-# This section defines the source path for your models, snapshots, seeds, etc.
-source-paths: 
+source-paths:
   - models
 
-# This section defines the paths for tests, if applicable.
-test-paths:
-  - tests
-
-# This section specifies where your data files (e.g., seeds) are located.
-data-paths:
-  - data
-
-# This section defines the paths for any macros you use.
-macro-paths:
-  - macros
-
-# This section specifies the default materializations for models.
+# Optional configurations
 models:
-  my_dbt_project:  # This should match the project name
-    +materialized: table  # Default materialization for models (can be "view", "table", etc.)
-    my_model:
-      +materialized: view  # Override materialization for specific models
-    staging:
-      +materialized: incremental  # For incremental models
-
-# This section defines your DBT version.
-dbt_version: '1.0.0'
-
-# This section specifies any target configurations (optional).
-targets:
-  dev:
-    type: snowflake
-    account: psb29308.us-east-1
-    user: abhishek
-    password: 123GuptA@#
-    role: SYSADMIN
-    database: BOOTCAMP
-    warehouse: WH_ANALYTICS
-    schema: MTS_RAW
-    threads: 4
-    client_session_keep_alive: False
-
-# This section sets the version for DBT models, etc.
-  version: '2.0'
+  my_dbt_project:
+    +materialized: table
