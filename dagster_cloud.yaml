@@ -1,0 +1,6 @@
+locations:
+- build:
+    directory: ./dbt_test
+  code_source:
+    module_name: dbt_test.definitions
+  location_name: dbt_test
