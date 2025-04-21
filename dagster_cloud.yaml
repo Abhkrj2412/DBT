@@ -1,0 +1,6 @@
+locations:
+- build:
+    directory: ./dev
+  code_source:
+    module_name: dev.definitions
+  location_name: dev
