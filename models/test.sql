@@ -1,11 +1,7 @@
-{{ config(materialized='table') }}
+{{ config(materialized='table') }}  
  
-with source_data as (
- 
-    select * from BOOTCAMP.MTS_RAW.MY_FIRST_DBT_MODEL
- 
+WITH debug_data AS (
+    {{ load_mts_sales_data() }}  
 )
  
-select *
-from source_data
- 
+SELECT * FROM debug_data
