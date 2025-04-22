@@ -1,8 +1,11 @@
-{{ config(materialized='view') }}
-
-WITH base AS (
-    SELECT *
-    FROM BOOTCAMP.MTS_RAW.MTS_SALES_DATA
+{{ config(materialized='table') }}
+ 
+with source_data as (
+ 
+    select * from BOOTCAMP.MTS_RAW.MY_FIRST_DBT_MODEL
+ 
 )
-
-SELECT * FROM base
+ 
+select *
+from source_data
+ 
